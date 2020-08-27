@@ -16,7 +16,7 @@ function App() {
   const [{user},dispatch]=useStatevalue();
   const [posts,setpost]=useState([])
   useEffect(() =>{
-      db.collection("posts").onSnapshot(snapshot =>{
+      db.collection("posts").orderBy("timestamp","asc").onSnapshot(snapshot =>{
           setpost(snapshot.docs.map((doc)=>({
               id:doc.id,
               data:doc.data()
@@ -48,7 +48,7 @@ function App() {
       </div>
       <div className="app__post">
         {posts.map((post)=>(
-          <Post author={post.data.author} caption={post.data.caption} src={post.data.src} pic=""/>
+          <Post author={post.data.author} caption={post.data.caption} src={post.data.src} pic="" id={post.id}/>
         ))}
       </div>
       <div className="upload">

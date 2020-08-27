@@ -1,0 +1,19 @@
+.image {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+  border-top: 1px solid lightgrey;
+    position:sticky;
+    bottom: 0;
+    background-color:white;
+}
+.image > progress
+{  
+  width: 100%;
+}
+.image >input
+{   
+    width: 100%;
+}
