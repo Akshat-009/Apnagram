@@ -11,6 +11,7 @@ import db ,{auth} from "./firebase"
 import {useStatevalue} from "./StateProvider";
 import Login from './Login';
 import Button from '@material-ui/core/Button';
+import ImageUpload from './ImageUpload';
 function App() {
   const [{user},dispatch]=useStatevalue();
   const [posts,setpost]=useState([])
@@ -49,8 +50,9 @@ function App() {
         {posts.map((post)=>(
           <Post author={post.data.author} caption={post.data.caption} src={post.data.src} pic=""/>
         ))}
-        
-        
+      </div>
+      <div className="upload">
+        <ImageUpload/>
       </div>
     </div>
   ):(<Login/>)
