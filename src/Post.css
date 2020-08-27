@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.post
+{
+    max-height:942px;
+    background-color:white;
+    font-family: 'Roboto', sans-serif;
+    max-width: 600px;
+    margin:20px 170px;
+    border:1px solid lightgrey;
+}
+.post__header 
+{display:flex;
+align-items:center;
+margin: 10px 10px;
+height: 60px;
+padding: 16px;
+}
+.post__avatar
+{
+    margin-top:5px;
+    object-fit: contain;
+}
+.post__header >h3
+{   
+    margin-left:5px;
+}
+.post__image
+{   max-width:600px; 
+    height: 600px;
+    object-fit: contain;
+}
+.post__image >img
+{   border-top:1px solid lightgrey;
+    border-bottom:1px solid lightgrey;
+    height:100%;
+    width:100%;
+}
+.post__footer{
+    padding:16px;
+
+}
+.post__footer__author
+{display:flex;
+align-items:center;}
+.post__footer__author >h4{
+    font-weight:900;
+    margin-right:4px;
+}
+
+@media screen and (max-width:620px)
+{
+    .post
+    {
+        width:100vw;
+        height:80vh;
+        margin-top:10px ;
+        margin-bottom:10px;
+        margin-left:0;
+        margin-right:0;
+    }
+    .post__image
+    {   
+        height: 60vh;
+    }
+}

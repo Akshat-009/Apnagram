@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.app
+{
+  height:100vh;
+  width:100vw;
+  background-color: #FAFAFA;
+}
+.app__header
+{display: flex;
+  height: 80px;
+  
+  width:100vw;
+  background-color:white;
+  padding:10px 20px;
+  border-bottom:1px solid lightgrey;
+  align-items:center; 
+  justify-content: space-between;
+  
+}
+.app__header >h2{
+  font-family: 'Lobster', cursive;
+  font-weight: 500;
+  margin-left:150px;
+}
+.app__header__right
+{display:flex;
+  padding: 10px;
+  flex:0.25;
+  margin-right:160px;
+  
+justify-content: space-around;
+align-items:center;}
+@media  screen and (max-width:1050px)
+{
+.app__header >h2
+{
+  margin-left: 0px;
+}
+.app__header__right
+{
+  flex:0.5;
+  margin-right:0px;
+}
+}
+@media screen and (max-width:511px)
+
+{
+  .app__header__right
+  {flex:0.75;}
+
+.MuiSvgIcon-root
+{
+  color:black!important;
+}
+}
