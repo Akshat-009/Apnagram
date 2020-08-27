@@ -7,8 +7,12 @@ import ExploreIcon from '@material-ui/icons/Explore';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Post from'./Post';
-import db from "./firebase"
+import db ,{auth} from "./firebase"
+import {useStatevalue} from "./StateProvider";
+import Login from './Login';
+import Button from '@material-ui/core/Button';
 function App() {
+  const [{user},dispatch]=useStatevalue();
   const [posts,setpost]=useState([])
   useEffect(() =>{
       db.collection("posts").onSnapshot(snapshot =>{
@@ -18,7 +22,8 @@ function App() {
           })))
       })
   },[])
-  return (
+  console.log(user)
+  return  user?(
     <div className="app">
       <div className="app__header">
         <h2>Apnagram</h2>
@@ -35,8 +40,9 @@ function App() {
           <IconButton>
           <ExploreIcon/>
           </IconButton>
-          <Avatar/>
-         
+          <Avatar src={user.photoURL} />
+        {/* Logout functionality */}
+        {/* <Button onClick={() =>auth.signOut().then(() =>{dispatch({type:"SET_USER",user:null})})}>Logout</Button> */}
         </div>
       </div>
       <div className="app__post">
@@ -47,7 +53,7 @@ function App() {
         
       </div>
     </div>
-  )
+  ):(<Login/>)
 }
 
 export default App

@@ -42,6 +42,10 @@ align-items:center;}
   margin-right:0px;
 }
 }
+.MuiSvgIcon-root
+{
+  color:black!important;
+}
 @media screen and (max-width:511px)
 
 {
